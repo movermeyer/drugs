@@ -2,6 +2,7 @@
 *.egg-info/
 *.py[co]
 .ropeproject
+.coverage
 .tox
 __pycache__
 dist
