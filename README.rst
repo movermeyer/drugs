@@ -29,3 +29,10 @@ Tests
 .. code-block:: python
 
     tox
+
+Credits
+-------
+I would like to mention, than some of the helpers were taken (some times updated) from `Kirill Klenov`_'s projects.
+We used to work together, I tool a lot of experience from him.
+
+.. _Kirill Klenov: http://klen.github.io/
