@@ -1,0 +1,11 @@
+[report]
+omit=
+    drugs/six.py
+    drugs/tests/*
+source=drugs
+
+[run]
+omit=
+    drugs/six.py
+    drugs/tests/*
+source=drugs
