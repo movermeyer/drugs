@@ -33,3 +33,20 @@ class Proxy(object):
         new = cls.__new__(cls)
         new.__dict__ = self.__dict__
         return new
+
+
+class classproperty(property):
+
+    """ Implement property behaviour for classes.
+
+    class A():
+
+        @classproperty
+        @classmethod
+        def name(cls):
+            return cls.__name__
+
+    """
+
+    def __get__(self, obj, type_):
+        return self.__get__fget.__get__(None, type_)()
