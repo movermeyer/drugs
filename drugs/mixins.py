@@ -49,4 +49,4 @@ class classproperty(property):
     """
 
     def __get__(self, obj, type_):
-        return self.__get__fget.__get__(None, type_)()
+        return self.fget.__get__(None, type_)()
