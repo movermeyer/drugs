@@ -15,10 +15,10 @@ class _classproperty(property):
         return self.fget.__get__(None, type_)()
 
 
-def _lazy(f):
-    ''' Decorator that makes a method lazy-evaluated.'''
+def _cached(f):
+    ''' Decorator that makes a method cached.'''
 
-    attr_name = '_lazy_' + f.__name__
+    attr_name = '_cached_' + f.__name__
 
     def wrapper(obj, *args, **kwargs):
         if not hasattr(obj, attr_name):
@@ -28,5 +28,5 @@ def _lazy(f):
 
 
 classproperty = lambda f: _classproperty(classmethod(f))
-lazy_property = lambda f: property(_lazy(f))
-lazy_classproperty = lambda f: classproperty(_lazy(f))
+cached_property = lambda f: property(_cached(f))
+cached_classproperty = lambda f: classproperty(_cached(f))

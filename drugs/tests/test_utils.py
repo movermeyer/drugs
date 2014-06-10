@@ -3,10 +3,10 @@ from mock import MagicMock
 
 from ..utils import (
     _classproperty,
-    _lazy,
+    _cached,
     classproperty,
-    lazy_classproperty,
-    lazy_property,
+    cached_classproperty,
+    cached_property,
 )
 
 
@@ -32,9 +32,9 @@ class TestUtils(unittest.TestCase):
 
         self.assertEqual(A.x, "works")
 
-    def test_lazy_method(self):
+    def test_cached_method(self):
         class A(object):
-            @_lazy
+            @_cached
             def x(self_):
                 return self.heavy_method()
 
@@ -45,10 +45,10 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(obj.x(), "method")
         self.assertEqual(self.heavy_method.call_count, 1)
 
-    def test_lazy_classmethod(self):
+    def test_cached_classmethod(self):
         class A(object):
             @classmethod
-            @_lazy
+            @_cached
             def x(cls):
                 return self.heavy_method()
 
@@ -58,9 +58,9 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(A.x(), "method")
         self.assertEqual(self.heavy_method.call_count, 1)
 
-    def test_lazy_property(self):
+    def test_cached_property(self):
         class A(object):
-            @lazy_property
+            @cached_property
             def x(self_):
                 return self.heavy_method()
         obj = A()
@@ -70,9 +70,9 @@ class TestUtils(unittest.TestCase):
         self.assertEqual(obj.x, "method")
         self.assertEqual(self.heavy_method.call_count, 1)
 
-    def test_lazy_classproperty(self):
+    def test_cached_classproperty(self):
         class A(object):
-            @lazy_classproperty
+            @cached_classproperty
             def x(cls):
                 return self.heavy_method()
 
