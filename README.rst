@@ -6,11 +6,11 @@
     :target: https://coveralls.io/r/pavlov99/drugs
     :alt: Coverage Status
 
-.. image:: https://pypip.in/v/drugs/badge.png
+.. image:: https://img.shields.io/pypi/v/drugs.svg
     :target: https://crate.io/packages/drugs
     :alt: Version
 
-.. image:: https://pypip.in/d/drugs/badge.png
+.. image:: https://img.shields.io/pypi/dm/drugs.svg
     :target: https://crate.io/packages/drugs
     :alt: Downloads
 
